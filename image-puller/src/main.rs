@@ -121,7 +121,6 @@ async fn save_all<'a>(woman_label: &str, man_label: &str, ids: impl Iterator<Ite
             path.push("images");
 
             use image::GenericImageView;
-            println!("Getting image...");
             match image::load_from_memory(&*image_request.await?.bytes().await?) {
                 Ok(image) => {
                     let (width, height) = image.dimensions();
